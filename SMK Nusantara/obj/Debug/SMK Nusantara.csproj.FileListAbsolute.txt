@@ -1,0 +1,33 @@
+D:\LKS\LKS IT Software Solution\SMK Nusantara\SMK Nusantara\bin\Debug\SMK Nusantara.exe.config
+D:\LKS\LKS IT Software Solution\SMK Nusantara\SMK Nusantara\bin\Debug\SMK Nusantara.exe
+D:\LKS\LKS IT Software Solution\SMK Nusantara\SMK Nusantara\bin\Debug\SMK Nusantara.pdb
+D:\LKS\LKS IT Software Solution\SMK Nusantara\SMK Nusantara\obj\Debug\SMK Nusantara.csprojAssemblyReference.cache
+D:\LKS\LKS IT Software Solution\SMK Nusantara\SMK Nusantara\obj\Debug\SMK_Nusantara.FrmAdminNavigation.resources
+D:\LKS\LKS IT Software Solution\SMK Nusantara\SMK Nusantara\obj\Debug\SMK_Nusantara.FrmLogin.resources
+D:\LKS\LKS IT Software Solution\SMK Nusantara\SMK Nusantara\obj\Debug\SMK_Nusantara.FrmStudentNavigation.resources
+D:\LKS\LKS IT Software Solution\SMK Nusantara\SMK Nusantara\obj\Debug\SMK_Nusantara.FrmTeacherNavigation.resources
+D:\LKS\LKS IT Software Solution\SMK Nusantara\SMK Nusantara\obj\Debug\SMK_Nusantara.Properties.Resources.resources
+D:\LKS\LKS IT Software Solution\SMK Nusantara\SMK Nusantara\obj\Debug\SMK Nusantara.csproj.GenerateResource.cache
+D:\LKS\LKS IT Software Solution\SMK Nusantara\SMK Nusantara\obj\Debug\SMK Nusantara.csproj.CoreCompileInputs.cache
+D:\LKS\LKS IT Software Solution\SMK Nusantara\SMK Nusantara\obj\Debug\SMK Nusantara.exe
+D:\LKS\LKS IT Software Solution\SMK Nusantara\SMK Nusantara\obj\Debug\SMK Nusantara.pdb
+D:\LKS\LKS IT Software Solution\SMK Nusantara\SMK Nusantara\obj\Debug\SMK_Nusantara.FrmEditProfile.resources
+D:\LKS\LKS IT Software Solution\SMK Nusantara\SMK Nusantara\obj\Debug\SMK_Nusantara.FrmChangePassword.resources
+D:\LKS\LKS IT Software Solution\SMK Nusantara\SMK Nusantara\obj\Debug\SMK_Nusantara.FrmStudent.resources
+D:\LKS\LKS IT Software Solution\SMK Nusantara\SMK Nusantara\obj\Debug\SMK_Nusantara.FrmTeacher.resources
+D:\LKS\LKS IT Software Solution\SMK Nusantara\SMK Nusantara\obj\Debug\SMK_Nusantara.FrmMasterStudent.resources
+D:\LKS\LKS IT Software Solution\SMK Nusantara\SMK Nusantara\obj\Debug\SMK_Nusantara.FrmMasterTeacher.resources
+D:\LKS\LKS IT Software Solution\SMK Nusantara\SMK Nusantara\obj\Debug\SMK_Nusantara.FrmClass.resources
+D:\LKS\LKS IT Software Solution\SMK Nusantara\SMK Nusantara\obj\Debug\SMK_Nusantara.FrmFinalize.resources
+D:\LKS\LKS IT Software Solution\SMK Nusantara\SMK Nusantara\obj\Debug\SMK_Nusantara.FrmSchedule.resources
+D:\LKS\LKS IT Software Solution\SMK Nusantara\SMK Nusantara\obj\Debug\SMK_Nusantara.FrmViewSubjectNeeded.resources
+D:\LKS\LKS IT Software Solution\SMK Nusantara\SMK Nusantara\obj\Debug\SMK_Nusantara.FrmViewScheduleTeacher.resources
+D:\LKS\LKS IT Software Solution\SMK Nusantara\SMK Nusantara\obj\Debug\SMK_Nusantara.FrmViewSchedule.resources
+D:\LKS\LKS IT Software Solution\SMK Nusantara\SMK Nusantara\obj\Debug\SMK_Nusantara.FrmInputScore.resources
+D:\LKS\LKS IT Software Solution\SMK Nusantara\SMK Nusantara\obj\Debug\SMK_Nusantara.FrmEntryScore.resources
+D:\LKS\LKS IT Software Solution\SMK Nusantara\SMK Nusantara\obj\Debug\SMK_Nusantara.FrmInbox.resources
+D:\LKS\LKS IT Software Solution\SMK Nusantara\SMK Nusantara\obj\Debug\SMK_Nusantara.FrmViewScore.resources
+D:\LKS\LKS IT Software Solution\SMK Nusantara\SMK Nusantara\obj\Debug\SMK_Nusantara.FrmReportScore.resources
+D:\LKS\LKS IT Software Solution\SMK Nusantara\SMK Nusantara\obj\Debug\SMK_Nusantara.FrmDetailMessage.resources
+D:\LKS\LKS IT Software Solution\SMK Nusantara\SMK Nusantara\obj\Debug\SMK_Nusantara.FrmReplyMessage.resources
+D:\LKS\LKS IT Software Solution\SMK Nusantara\SMK Nusantara\obj\Debug\SMK_Nusantara.FrmSendMessage.resources

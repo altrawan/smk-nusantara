@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="LKSN2017" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=ACER-NOTEBOOK;Initial Catalog=LKSN2017;Integrated Security=True" SettingsObjectName="SMK_Nusantara.Properties.Settings" SettingsPropertyName="LKSN2017ConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Teacher" Member="Teachers">
+    <Type Name="Teacher">
+      <Column Name="TeacherID" Type="System.String" DbType="VarChar(8) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PhoneNumber" Type="System.String" DbType="VarChar(12) NOT NULL" CanBeNull="false" />
+      <Column Name="DateofBirth" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Gender" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" />
+      <Column Name="Address" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Photo" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Association Name="Teacher_User" Member="Users" ThisKey="TeacherID" OtherKey="Username" Type="User" />
+      <Association Name="Teacher_DetailSchedule" Member="DetailSchedules" ThisKey="TeacherID" OtherKey="TeacherID" Type="DetailSchedule" />
+      <Association Name="Teacher_Expertise" Member="Expertises" ThisKey="TeacherID" OtherKey="TeacherID" Type="Expertise" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[User]" Member="Users">
+    <Type Name="User">
+      <Column Name="UserID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Username" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Role" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Association Name="Teacher_User" Member="Teacher" ThisKey="Username" OtherKey="TeacherID" Type="Teacher" IsForeignKey="true" />
+      <Association Name="Student_User" Member="Student" ThisKey="Username" OtherKey="StudentID" Type="Student" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Student" Member="Students">
+    <Type Name="Student">
+      <Column Name="StudentID" Type="System.String" DbType="VarChar(8) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Address" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Gender" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" />
+      <Column Name="DateofBirth" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="PhoneNumber" Type="System.String" DbType="VarChar(12) NOT NULL" CanBeNull="false" />
+      <Column Name="Photo" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Association Name="Student_User" Member="Users" ThisKey="StudentID" OtherKey="Username" Type="User" />
+      <Association Name="Student_DetailClass" Member="DetailClasses" ThisKey="StudentID" OtherKey="StudentID" Type="DetailClass" />
+      <Association Name="Student_DetailScore" Member="DetailScores" ThisKey="StudentID" OtherKey="StudentID" Type="DetailScore" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DetailClass" Member="DetailClasses">
+    <Type Name="DetailClass">
+      <Column Name="DetailClassID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ClassName" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="StudentID" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Association Name="Student_DetailClass" Member="Student" ThisKey="StudentID" OtherKey="StudentID" Type="Student" IsForeignKey="true" />
+      <Association Name="Class_DetailClass" Member="Class" ThisKey="ClassName" OtherKey="ClassName" Type="Class" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DetailSchedule" Member="DetailSchedules">
+    <Type Name="DetailSchedule">
+      <Column Name="DetailID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ScheduleID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SubjectID" Type="System.String" DbType="Char(5) NOT NULL" CanBeNull="false" />
+      <Column Name="TeacherID" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="ShiftID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Day" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
+      <Association Name="DetailSchedule_DetailScore" Member="DetailScores" ThisKey="DetailID" OtherKey="DetailID" Type="DetailScore" />
+      <Association Name="Teacher_DetailSchedule" Member="Teacher" ThisKey="TeacherID" OtherKey="TeacherID" Type="Teacher" IsForeignKey="true" />
+      <Association Name="HeaderSchedule_DetailSchedule" Member="HeaderSchedule" ThisKey="ScheduleID" OtherKey="ScheduleID" Type="HeaderSchedule" IsForeignKey="true" />
+      <Association Name="Shift_DetailSchedule" Member="Shift" ThisKey="ShiftID" OtherKey="ShiftID" Type="Shift" IsForeignKey="true" />
+      <Association Name="Subject_DetailSchedule" Member="Subject" ThisKey="SubjectID" OtherKey="SubjectID" Type="Subject" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DetailScore" Member="DetailScores">
+    <Type Name="DetailScore">
+      <Column Name="ScoreDetailID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DetailID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="StudentID" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="Assignment" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MidExam" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FinalExam" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="DetailSchedule_DetailScore" Member="DetailSchedule" ThisKey="DetailID" OtherKey="DetailID" Type="DetailSchedule" IsForeignKey="true" />
+      <Association Name="Student_DetailScore" Member="Student" ThisKey="StudentID" OtherKey="StudentID" Type="Student" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Expertise" Member="Expertises">
+    <Type Name="Expertise">
+      <Column Name="ExpertiseID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TeacherID" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="SubjectID" Type="System.String" DbType="Char(5) NOT NULL" CanBeNull="false" />
+      <Association Name="Teacher_Expertise" Member="Teacher" ThisKey="TeacherID" OtherKey="TeacherID" Type="Teacher" IsForeignKey="true" />
+      <Association Name="Subject_Expertise" Member="Subject" ThisKey="SubjectID" OtherKey="SubjectID" Type="Subject" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HeaderSchedule" Member="HeaderSchedules">
+    <Type Name="HeaderSchedule">
+      <Column Name="ScheduleID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ClassName" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="Finalize" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="HeaderSchedule_DetailSchedule" Member="DetailSchedules" ThisKey="ScheduleID" OtherKey="ScheduleID" Type="DetailSchedule" />
+      <Association Name="Class_HeaderSchedule" Member="Class" ThisKey="ClassName" OtherKey="ClassName" Type="Class" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Class" Member="Classes">
+    <Type Name="Class">
+      <Column Name="ClassName" Type="System.String" DbType="VarChar(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Grade" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Class_DetailClass" Member="DetailClasses" ThisKey="ClassName" OtherKey="ClassName" Type="DetailClass" />
+      <Association Name="Class_HeaderSchedule" Member="HeaderSchedules" ThisKey="ClassName" OtherKey="ClassName" Type="HeaderSchedule" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Message" Member="Messages">
+    <Type Name="Message">
+      <Column Name="MessageID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Sender" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="Receiver" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="Detail" Type="System.String" DbType="VarChar(160) NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="SentTime" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Shift" Member="Shifts">
+    <Type Name="Shift">
+      <Column Name="ShiftID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Time" Type="System.String" DbType="Char(13) NOT NULL" CanBeNull="false" />
+      <Association Name="Shift_DetailSchedule" Member="DetailSchedules" ThisKey="ShiftID" OtherKey="ShiftID" Type="DetailSchedule" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Subject" Member="Subjects">
+    <Type Name="Subject">
+      <Column Name="SubjectID" Type="System.String" DbType="Char(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Assignment" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MidExam" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FinalExam" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ShiftDuration" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Grade" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Subject_DetailSchedule" Member="DetailSchedules" ThisKey="SubjectID" OtherKey="SubjectID" Type="DetailSchedule" />
+      <Association Name="Subject_Expertise" Member="Expertises" ThisKey="SubjectID" OtherKey="SubjectID" Type="Expertise" />
+    </Type>
+  </Table>
+  <Table Name="dbo.View_1" Member="View_1s">
+    <Type Name="View_1">
+      <Column Name="StudentID" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Assignment" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MidExam" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FinalExam" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SubjectID" Type="System.String" DbType="Char(5) NOT NULL" CanBeNull="false" />
+      <Column Name="ClassName" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="Expr1" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>
